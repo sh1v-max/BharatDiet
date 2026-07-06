@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home.jsx'
 import CalorieCalculator from '../pages/CalorieCalculator.jsx'
 import ProteinCalculator from '../pages/ProteinCalculator.jsx'
+import FoodDatabase from '../pages/FoodDatabase.jsx'
+import FoodDetail from '../pages/FoodDetail.jsx'
 import Placeholder from '../pages/Placeholder.jsx'
 
 export default function AppRoutes() {
@@ -14,14 +16,8 @@ export default function AppRoutes() {
       />
       <Route path="/calculators/calories" element={<CalorieCalculator />} />
       <Route path="/calculators/protein" element={<ProteinCalculator />} />
-      <Route
-        path="/foods"
-        element={<Placeholder title="Food Database" week={3} />}
-      />
-      <Route
-        path="/foods/:slug"
-        element={<Placeholder title="Food Details" week={3} />}
-      />
+      <Route path="/foods" element={<FoodDatabase />} />
+      <Route path="/foods/:slug" element={<FoodDetail />} />
       <Route path="/blog" element={<Placeholder title="Blog" week={6} />} />
       <Route
         path="/blog/:slug"
