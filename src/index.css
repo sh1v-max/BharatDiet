@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+
+/*
+ * BharatDiet design tokens (Phase 9 of BLUEPRINT.md)
+ * Warm, trustworthy, non-clinical — turmeric + deep green on warm off-white.
+ */
+@theme {
+  /* Brand */
+  --color-saffron-50: #fdf4ec;
+  --color-saffron-100: #fae5d0;
+  --color-saffron-200: #f4c99f;
+  --color-saffron-300: #eeab6d;
+  --color-saffron-400: #e8873a;
+  --color-saffron-500: #d97420;
+  --color-saffron-600: #b85c15;
+  --color-saffron-700: #934812;
+  --color-saffron-800: #703713;
+  --color-saffron-900: #522a11;
+
+  --color-leaf-50: #eef6f1;
+  --color-leaf-100: #d5e9dd;
+  --color-leaf-200: #a9d2ba;
+  --color-leaf-300: #79b795;
+  --color-leaf-400: #4f9a73;
+  --color-leaf-500: #38815d;
+  --color-leaf-600: #2f6b4f;
+  --color-leaf-700: #285540;
+  --color-leaf-800: #214336;
+  --color-leaf-900: #1a352b;
+
+  /* Neutrals — warm, not clinical */
+  --color-cream: #faf7f2;
+  --color-ink: #1f2321;
+  --color-ink-soft: #4c534f;
+  --color-ink-faint: #8a918c;
+  --color-line: #e7e1d8;
+
+  /* Feedback (protein gap states) */
+  --color-gap-met: #38815d;
+  --color-gap-small: #c98a1b;
+  --color-gap-large: #c0563b;
+
+  /* Typography */
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+/* Calorie/macro numbers shouldn't jitter in width */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
