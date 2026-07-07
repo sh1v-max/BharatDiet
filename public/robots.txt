@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bharatdiet.in/sitemap.xml
+Sitemap: https://bharat-diet.vercel.app/sitemap.xml

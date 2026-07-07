@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
-const BASE_URL = 'https://bharatdiet.in'
+const BASE_URL = 'https://bharat-diet.vercel.app'
 
 const staticRoutes = [
   '/', '/meal-planner', '/calculators/calories', '/calculators/protein',
