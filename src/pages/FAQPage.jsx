@@ -1,3 +1,4 @@
+import { Plus } from 'lucide-react'
 import usePageMeta from '../hooks/usePageMeta.js'
 import { FAQS } from '../data/faqs.js'
 
@@ -19,11 +20,12 @@ export default function FAQPage() {
             className="group rounded-xl border border-line bg-white px-5 py-4"
           >
             <summary className="cursor-pointer list-none font-medium">
-              <span className="flex items-center justify-between">
+              <span className="flex items-center justify-between gap-3">
                 {f.q}
-                <span className="text-saffron-500 transition-transform group-open:rotate-45">
-                  +
-                </span>
+                <Plus
+                  className="h-5 w-5 shrink-0 text-saffron-500 transition-transform group-open:rotate-45"
+                  aria-hidden
+                />
               </span>
             </summary>
             <p className="mt-3 text-sm text-ink-soft">{f.a}</p>

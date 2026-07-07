@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Button from '../components/common/Button.jsx'
@@ -90,7 +91,10 @@ export default function ProteinGap() {
             )}
 
             <Link to="/meal-planner" className="self-center">
-              <Button size="lg">Generate My Full Meal Plan →</Button>
+              <Button size="lg">
+                Generate My Full Meal Plan
+                <ArrowRight className="h-5 w-5" aria-hidden />
+              </Button>
             </Link>
           </>
         )}

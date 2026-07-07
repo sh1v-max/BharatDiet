@@ -1,3 +1,4 @@
+import { Check } from 'lucide-react'
 import { getFoodById } from '../../services/foodService.js'
 
 /*
@@ -54,13 +55,13 @@ export default function TypicalDayPicker({ selected, onToggle }) {
                   type="button"
                   aria-pressed={isOn}
                   onClick={() => onToggle(id)}
-                  className={`cursor-pointer rounded-full border px-3 py-1.5 text-sm transition-colors ${
+                  className={`inline-flex cursor-pointer items-center gap-1 rounded-full border px-3 py-1.5 text-sm transition-colors ${
                     isOn
                       ? 'border-leaf-600 bg-leaf-50 font-medium text-leaf-800'
                       : 'border-line bg-white text-ink-soft hover:border-saffron-300'
                   }`}
                 >
-                  {isOn && '✓ '}
+                  {isOn && <Check className="h-3.5 w-3.5" aria-hidden />}
                   {food.name}
                 </button>
               )

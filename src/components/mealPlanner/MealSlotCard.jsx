@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
+import { Coffee, Moon, Sun, Sunrise } from 'lucide-react'
 import Card from '../common/Card.jsx'
 import Badge from '../common/Badge.jsx'
 
-const slotEmoji = {
-  breakfast: '🌅',
-  lunch: '☀️',
-  snack: '🫖',
-  dinner: '🌙',
+const slotIcons = {
+  breakfast: Sunrise,
+  lunch: Sun,
+  snack: Coffee,
+  dinner: Moon,
 }
 
 function portionLabel(portions) {
@@ -14,11 +15,13 @@ function portionLabel(portions) {
 }
 
 export default function MealSlotCard({ slot }) {
+  const SlotIcon = slotIcons[slot.key]
   return (
     <Card className="p-5">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
         <h3 className="flex items-center gap-2 font-semibold">
-          <span>{slotEmoji[slot.key]}</span> {slot.label}
+          <SlotIcon className="h-5 w-5 text-saffron-500" aria-hidden />
+          {slot.label}
         </h3>
         <span className="text-sm tabular-nums text-ink-soft">
           {Math.round(slot.totals.cal)} kcal ·{' '}

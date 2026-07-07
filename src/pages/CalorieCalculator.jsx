@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Button from '../components/common/Button.jsx'
@@ -80,7 +81,8 @@ export default function CalorieCalculator() {
 
               <Link to="/meal-planner">
                 <Button className="w-full">
-                  Turn this into an Indian meal plan →
+                  Turn this into an Indian meal plan
+                  <ArrowRight className="h-4 w-4" aria-hidden />
                 </Button>
               </Link>
             </div>

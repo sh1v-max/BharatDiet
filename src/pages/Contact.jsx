@@ -1,19 +1,20 @@
+import { Bug, Handshake, MessageCircle } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import usePageMeta from '../hooks/usePageMeta.js'
 
 const CHANNELS = [
   {
-    icon: '💬',
+    icon: MessageCircle,
     title: 'Feedback & suggestions',
     body: 'Found a food with wrong macros? Want your state\'s cuisine added? That feedback directly shapes the roadmap.',
   },
   {
-    icon: '🐛',
+    icon: Bug,
     title: 'Bug reports',
     body: 'Something broke or looks off on your device? A screenshot and your browser name is all we need.',
   },
   {
-    icon: '🤝',
+    icon: Handshake,
     title: 'Collaboration',
     body: 'Nutritionists, dietitians, and regional-cuisine experts — we\'d love help validating and expanding the food database.',
   },
@@ -36,7 +37,7 @@ export default function Contact() {
       <div className="mt-8 flex flex-col gap-4">
         {CHANNELS.map((c) => (
           <Card key={c.title} className="flex items-start gap-4 p-5">
-            <span className="text-2xl">{c.icon}</span>
+            <c.icon className="h-6 w-6 shrink-0 text-saffron-500" aria-hidden />
             <div>
               <h2 className="font-semibold">{c.title}</h2>
               <p className="mt-1 text-sm text-ink-soft">{c.body}</p>

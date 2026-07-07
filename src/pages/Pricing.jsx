@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Check } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Button from '../components/common/Button.jsx'
@@ -85,7 +86,8 @@ export default function Pricing() {
             <ul className="mt-5 flex flex-col gap-2 text-sm">
               {tier.features.map((f) => (
                 <li key={f} className="flex items-start gap-2">
-                  <span className="mt-0.5 text-leaf-600">✓</span> {f}
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-leaf-600" aria-hidden />
+                  {f}
                 </li>
               ))}
             </ul>

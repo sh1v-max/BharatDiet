@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { CookingPot, Menu, X } from 'lucide-react'
 import Button from '../common/Button.jsx'
 
 /*
@@ -55,7 +56,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 border-b border-line bg-cream/90 backdrop-blur">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl">🥘</span>
+          <CookingPot className="h-6 w-6 text-saffron-500" aria-hidden />
           <span className="font-display text-lg font-bold text-ink">
             Bharat<span className="text-saffron-500">Diet</span>
           </span>
@@ -83,19 +84,11 @@ export default function Navbar() {
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((v) => !v)}
         >
-          {/* animated 2-bar icon */}
-          <span className="relative block h-4 w-6" aria-hidden>
-            <span
-              className={`absolute left-0 top-0.5 h-0.5 w-6 rounded bg-current transition-transform duration-200 ${
-                menuOpen ? 'translate-y-[6px] rotate-45' : ''
-              }`}
-            />
-            <span
-              className={`absolute left-0 top-[13px] h-0.5 w-6 rounded bg-current transition-transform duration-200 ${
-                menuOpen ? '-translate-y-[6px] -rotate-45' : ''
-              }`}
-            />
-          </span>
+          {menuOpen ? (
+            <X className="h-6 w-6" aria-hidden />
+          ) : (
+            <Menu className="h-6 w-6" aria-hidden />
+          )}
         </button>
       </nav>
 

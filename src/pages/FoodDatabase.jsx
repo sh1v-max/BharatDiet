@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ArrowDown, ArrowUp } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Input from '../components/common/Input.jsx'
@@ -132,13 +133,16 @@ export default function FoodDatabase() {
                     className="w-full cursor-pointer px-4 py-3 font-semibold text-ink-soft hover:text-ink"
                     onClick={() => handleSort(col.key)}
                   >
-                    <span className={col.numeric ? 'float-right' : ''}>
+                    <span
+                      className={`inline-flex items-center gap-1 ${col.numeric ? 'float-right' : ''}`}
+                    >
                       {col.label}
-                      {sortBy === col.key && (
-                        <span className="ml-1 text-saffron-500">
-                          {direction === 'asc' ? '↑' : '↓'}
-                        </span>
-                      )}
+                      {sortBy === col.key &&
+                        (direction === 'asc' ? (
+                          <ArrowUp className="h-3.5 w-3.5 text-saffron-500" aria-hidden />
+                        ) : (
+                          <ArrowDown className="h-3.5 w-3.5 text-saffron-500" aria-hidden />
+                        ))}
                     </span>
                   </button>
                 </th>

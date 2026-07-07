@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import { ArrowLeft } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Button from '../components/common/Button.jsx'
@@ -31,7 +32,9 @@ export default function FoodDetail() {
       <section className="mx-auto max-w-3xl px-4 py-20 text-center">
         <h1 className="text-2xl font-bold">Food not found</h1>
         <Link to="/foods" className="mt-4 inline-block">
-          <Button variant="secondary">← Back to Food Database</Button>
+          <Button variant="secondary">
+            <ArrowLeft className="h-4 w-4" aria-hidden /> Back to Food Database
+          </Button>
         </Link>
       </section>
     )
@@ -47,8 +50,11 @@ export default function FoodDetail() {
 
   return (
     <section className="mx-auto max-w-4xl px-4 py-12">
-      <Link to="/foods" className="text-sm text-saffron-600 hover:underline">
-        ← Food Database
+      <Link
+        to="/foods"
+        className="inline-flex items-center gap-1 text-sm text-saffron-600 hover:underline"
+      >
+        <ArrowLeft className="h-4 w-4" aria-hidden /> Food Database
       </Link>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">

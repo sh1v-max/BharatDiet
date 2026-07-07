@@ -1,11 +1,13 @@
+import { Check, CircleAlert, TriangleAlert } from 'lucide-react'
+
 /*
  * Recommended vs. estimated protein as two horizontal bars. Severity is
  * never color-alone: each state carries an explicit label and icon.
  */
 const severityStyles = {
-  met: { color: 'var(--color-gap-met)', icon: '✓', label: 'Target met' },
-  small: { color: 'var(--color-gap-small)', icon: '△', label: 'Small gap' },
-  large: { color: 'var(--color-gap-large)', icon: '!', label: 'Large gap' },
+  met: { color: 'var(--color-gap-met)', Icon: Check, label: 'Target met' },
+  small: { color: 'var(--color-gap-small)', Icon: TriangleAlert, label: 'Small gap' },
+  large: { color: 'var(--color-gap-large)', Icon: CircleAlert, label: 'Large gap' },
 }
 
 export default function GapComparisonBar({ recommended, estimated, gap, severity }) {
@@ -43,10 +45,10 @@ export default function GapComparisonBar({ recommended, estimated, gap, severity
       >
         <span
           aria-hidden
-          className="flex h-6 w-6 items-center justify-center rounded-full text-white"
+          className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-white"
           style={{ backgroundColor: s.color }}
         >
-          {s.icon}
+          <s.Icon className="h-3.5 w-3.5" />
         </span>
         {s.label}
         {gap > 0 && (

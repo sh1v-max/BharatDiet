@@ -1,3 +1,4 @@
+import { RefreshCw } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Button from '../components/common/Button.jsx'
@@ -71,7 +72,7 @@ export default function MealPlanner() {
                     onClick={regenerate}
                     className="w-full min-[420px]:w-auto"
                   >
-                    ↻ Regenerate
+                    <RefreshCw className="h-4 w-4" aria-hidden /> Regenerate
                   </Button>
                 </div>
               </Card>

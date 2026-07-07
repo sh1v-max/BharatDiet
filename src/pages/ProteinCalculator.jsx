@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ArrowRight, CookingPot, Egg, Milk, Soup } from 'lucide-react'
 import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Button from '../components/common/Button.jsx'
@@ -12,10 +13,10 @@ import { PROTEIN_PER_KG } from '../utils/nutritionMath.js'
 /* Everyday visual anchors so grams mean something to a first-time user. */
 function proteinAnchors(proteinG) {
   return [
-    { food: 'Bowls of dal', grams: 9, emoji: '🍲' },
-    { food: 'Boiled eggs', grams: 6.3, emoji: '🥚' },
-    { food: '100g paneer', grams: 18, emoji: '🧀' },
-    { food: 'Glasses of milk', grams: 6.5, emoji: '🥛' },
+    { food: 'Bowls of dal', grams: 9, Icon: Soup },
+    { food: 'Boiled eggs', grams: 6.3, Icon: Egg },
+    { food: '100g paneer', grams: 18, Icon: CookingPot },
+    { food: 'Glasses of milk', grams: 6.5, Icon: Milk },
   ].map((a) => ({ ...a, count: Math.round(proteinG / a.grams) }))
 }
 
@@ -70,7 +71,7 @@ export default function ProteinCalculator() {
                       key={a.food}
                       className="flex items-center gap-2 rounded-lg bg-cream px-3 py-2 text-sm"
                     >
-                      <span className="text-lg">{a.emoji}</span>
+                      <a.Icon className="h-5 w-5 shrink-0 text-saffron-500" aria-hidden />
                       <span>
                         <strong className="tabular-nums">≈{a.count}</strong>{' '}
                         {a.food}
@@ -92,7 +93,8 @@ export default function ProteinCalculator() {
 
               <Link to="/meal-planner">
                 <Button className="w-full">
-                  Show me Indian foods that get me there →
+                  Show me Indian foods that get me there
+                  <ArrowRight className="h-4 w-4" aria-hidden />
                 </Button>
               </Link>
             </div>

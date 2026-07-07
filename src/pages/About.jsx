@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ArrowRight } from 'lucide-react'
 import Button from '../components/common/Button.jsx'
 import usePageMeta from '../hooks/usePageMeta.js'
 
@@ -42,7 +43,9 @@ export default function About() {
         </p>
       </div>
       <Link to="/meal-planner" className="mt-8 inline-block">
-        <Button size="lg">Try the Meal Planner →</Button>
+        <Button size="lg">
+          Try the Meal Planner <ArrowRight className="h-5 w-5" aria-hidden />
+        </Button>
       </Link>
     </section>
   )

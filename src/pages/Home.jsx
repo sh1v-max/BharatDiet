@@ -1,5 +1,9 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import {
+  ArrowRight, BarChart3, Briefcase, Calculator, Check, CookingPot,
+  GraduationCap, House, Map, Plus, Target, Wallet, X,
+} from 'lucide-react'
 import Button from '../components/common/Button.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Card from '../components/common/Card.jsx'
@@ -25,7 +29,7 @@ function Hero() {
       <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
         <Link to="/meal-planner" className="w-full sm:w-auto">
           <Button size="lg" className="w-full sm:w-auto">
-            Calculate My Free Diet Plan →
+            Calculate My Free Diet Plan <ArrowRight className="h-5 w-5" aria-hidden />
           </Button>
         </Link>
         <Link to="/protein-gap" className="w-full sm:w-auto">
@@ -61,7 +65,7 @@ function Problem() {
             <ul className="mt-4 space-y-2 text-left text-ink-soft">
               {['Avocado toast', 'Protein bars', 'Granola with almond milk', 'Turkey breast', 'Imported supplements'].map((x) => (
                 <li key={x} className="flex items-center gap-2">
-                  <span className="text-gap-large">✕</span>
+                  <X className="h-4 w-4 shrink-0 text-gap-large" aria-hidden />
                   <span className="line-through opacity-70">{x}</span>
                 </li>
               ))}
@@ -74,7 +78,8 @@ function Problem() {
             <ul className="mt-4 space-y-2 text-left text-ink">
               {['Roti, sabzi, dal', 'Rice with rajma or sambar', 'Curd, paneer, chaas', 'Eggs, fish, chicken', 'Poha, idli, upma'].map((x) => (
                 <li key={x} className="flex items-center gap-2">
-                  <span className="text-leaf-600">✓</span> {x}
+                  <Check className="h-4 w-4 shrink-0 text-leaf-600" aria-hidden />
+                  {x}
                 </li>
               ))}
             </ul>
@@ -102,7 +107,9 @@ function ProteinDeficiency() {
           shown you how to combine dal, curd, soy, and eggs to hit your number.
         </p>
         <Link to="/protein-gap" className="mt-8 inline-block">
-          <Button size="lg">Find My Protein Gap →</Button>
+          <Button size="lg">
+            Find My Protein Gap <ArrowRight className="h-5 w-5" aria-hidden />
+          </Button>
         </Link>
       </div>
     </section>
@@ -204,12 +211,12 @@ function RegionalShowcase() {
 
 /* ---------- Features ---------- */
 const FEATURES = [
-  { icon: '🗺️', title: 'Regional Meal Plans', desc: 'North, South, East, West — your plate, not a template.', to: '/meal-planner' },
-  { icon: '🎯', title: 'Protein Gap Analysis', desc: 'See your deficit and the exact foods that close it.', to: '/protein-gap' },
-  { icon: '💰', title: 'Budget-Aware Plans', desc: 'Great nutrition from ₹100 a day. No supplements required.', to: '/meal-planner' },
-  { icon: '🧮', title: 'Calorie & Macro Calculators', desc: 'BMR, TDEE, and macros — explained in plain language.', to: '/calculators/calories' },
-  { icon: '🥘', title: 'Indian Food Database', desc: '200+ foods with real serving sizes and real prices.', to: '/foods' },
-  { icon: '📊', title: 'Protein-per-Rupee', desc: 'Sort every food by protein value for money.', to: '/foods' },
+  { icon: Map, title: 'Regional Meal Plans', desc: 'North, South, East, West — your plate, not a template.', to: '/meal-planner' },
+  { icon: Target, title: 'Protein Gap Analysis', desc: 'See your deficit and the exact foods that close it.', to: '/protein-gap' },
+  { icon: Wallet, title: 'Budget-Aware Plans', desc: 'Great nutrition from ₹100 a day. No supplements required.', to: '/meal-planner' },
+  { icon: Calculator, title: 'Calorie & Macro Calculators', desc: 'BMR, TDEE, and macros — explained in plain language.', to: '/calculators/calories' },
+  { icon: CookingPot, title: 'Indian Food Database', desc: '200+ foods with real serving sizes and real prices.', to: '/foods' },
+  { icon: BarChart3, title: 'Protein-per-Rupee', desc: 'Sort every food by protein value for money.', to: '/foods' },
 ]
 
 function Features() {
@@ -223,7 +230,7 @@ function Features() {
           {FEATURES.map((f) => (
             <Link key={f.title} to={f.to}>
               <Card className="h-full p-5 transition-shadow hover:shadow-md">
-                <span className="text-2xl">{f.icon}</span>
+                <f.icon className="h-7 w-7 text-saffron-500" aria-hidden />
                 <h3 className="mt-2 font-semibold">{f.title}</h3>
                 <p className="mt-1 text-sm text-ink-soft">{f.desc}</p>
               </Card>
@@ -238,15 +245,15 @@ function Features() {
 /* ---------- Personas ---------- */
 const PERSONAS = [
   {
-    emoji: '🎓', who: 'The Hostel Student',
+    icon: GraduationCap, who: 'The Hostel Student',
     story: 'Mess food, ₹100/day, wants to build muscle. Gets a plan built on eggs, soy chunks, sattu, and dal — not whey he can\'t afford.',
   },
   {
-    emoji: '💼', who: 'The Working Professional',
+    icon: Briefcase, who: 'The Working Professional',
     story: 'Desk job, no time to cook elaborate meals, wants to lose weight without giving up roti-sabzi lunches from the tiffin.',
   },
   {
-    emoji: '🏠', who: 'The Homemaker',
+    icon: House, who: 'The Homemaker',
     story: 'Cooks for the whole family and wants the same dal-chawal dinner to quietly hit everyone\'s protein needs.',
   },
 ]
@@ -262,7 +269,7 @@ function Personas() {
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {PERSONAS.map((p) => (
             <Card key={p.who} className="p-5">
-              <span className="text-3xl">{p.emoji}</span>
+              <p.icon className="h-8 w-8 text-leaf-600" aria-hidden />
               <h3 className="mt-2 font-semibold">{p.who}</h3>
               <p className="mt-1 text-sm text-ink-soft">{p.story}</p>
             </Card>
@@ -288,11 +295,12 @@ function FAQ() {
               className="group rounded-xl border border-line bg-white px-5 py-4"
             >
               <summary className="cursor-pointer list-none font-medium marker:hidden">
-                <span className="flex items-center justify-between">
+                <span className="flex items-center justify-between gap-3">
                   {f.q}
-                  <span className="text-saffron-500 transition-transform group-open:rotate-45">
-                    +
-                  </span>
+                  <Plus
+                    className="h-5 w-5 shrink-0 text-saffron-500 transition-transform group-open:rotate-45"
+                    aria-hidden
+                  />
                 </span>
               </summary>
               <p className="mt-3 text-sm text-ink-soft">{f.a}</p>
@@ -317,7 +325,9 @@ function FinalCTA() {
           you.
         </p>
         <Link to="/meal-planner" className="mt-8 inline-block">
-          <Button size="lg">Build My Free Plan →</Button>
+          <Button size="lg">
+            Build My Free Plan <ArrowRight className="h-5 w-5" aria-hidden />
+          </Button>
         </Link>
       </div>
     </section>
