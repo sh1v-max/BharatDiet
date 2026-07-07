@@ -3,10 +3,16 @@ import Home from '../pages/Home.jsx'
 import MealPlanner from '../pages/MealPlanner.jsx'
 import CalorieCalculator from '../pages/CalorieCalculator.jsx'
 import ProteinCalculator from '../pages/ProteinCalculator.jsx'
-import FoodDatabase from '../pages/FoodDatabase.jsx'
 import ProteinGap from '../pages/ProteinGap.jsx'
+import FoodDatabase from '../pages/FoodDatabase.jsx'
 import FoodDetail from '../pages/FoodDetail.jsx'
-import Placeholder from '../pages/Placeholder.jsx'
+import Blog from '../pages/Blog.jsx'
+import BlogPost from '../pages/BlogPost.jsx'
+import About from '../pages/About.jsx'
+import Contact from '../pages/Contact.jsx'
+import FAQPage from '../pages/FAQPage.jsx'
+import Pricing from '../pages/Pricing.jsx'
+import NotFound from '../pages/NotFound.jsx'
 
 export default function AppRoutes() {
   return (
@@ -18,25 +24,13 @@ export default function AppRoutes() {
       <Route path="/protein-gap" element={<ProteinGap />} />
       <Route path="/foods" element={<FoodDatabase />} />
       <Route path="/foods/:slug" element={<FoodDetail />} />
-      <Route path="/blog" element={<Placeholder title="Blog" week={6} />} />
-      <Route
-        path="/blog/:slug"
-        element={<Placeholder title="Article" week={6} />}
-      />
-      <Route path="/about" element={<Placeholder title="About" week={6} />} />
-      <Route
-        path="/contact"
-        element={<Placeholder title="Contact" week={6} />}
-      />
-      <Route path="/faq" element={<Placeholder title="FAQ" week={6} />} />
-      <Route
-        path="/pricing"
-        element={<Placeholder title="Pricing" week={6} />}
-      />
-      <Route
-        path="*"
-        element={<Placeholder title="Page Not Found" week={6} />}
-      />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/faq" element={<FAQPage />} />
+      <Route path="/pricing" element={<Pricing />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

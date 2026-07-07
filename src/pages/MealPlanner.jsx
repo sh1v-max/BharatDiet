@@ -8,8 +8,13 @@ import MacroDonut from '../components/calculator/MacroDonut.jsx'
 import StatTile from '../components/calculator/StatTile.jsx'
 import { useUserProfile } from '../context/UserProfileContext.jsx'
 import useMealPlanGenerator from '../hooks/useMealPlanGenerator.js'
+import usePageMeta from '../hooks/usePageMeta.js'
 
 export default function MealPlanner() {
+  usePageMeta(
+    'Indian Meal Planner',
+    'Generate a free personalized Indian meal plan — regional foods, real portions, real costs, matched to your calories, protein target, and budget.',
+  )
   const { profile } = useUserProfile()
   const { plan, regenerate } = useMealPlanGenerator(profile)
 

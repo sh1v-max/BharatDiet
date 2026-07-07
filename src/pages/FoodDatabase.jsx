@@ -4,6 +4,7 @@ import Card from '../components/common/Card.jsx'
 import Badge from '../components/common/Badge.jsx'
 import Input from '../components/common/Input.jsx'
 import Select from '../components/common/Select.jsx'
+import usePageMeta from '../hooks/usePageMeta.js'
 import {
   filterFoods,
   sortFoods,
@@ -42,6 +43,10 @@ const columns = [
 ]
 
 export default function FoodDatabase() {
+  usePageMeta(
+    'Indian Food Database',
+    '200+ Indian foods with calories, protein, carbs, fat, real serving sizes, and cost per serving — searchable and sortable by protein per rupee.',
+  )
   const [query, setQuery] = useState('')
   const [category, setCategory] = useState('')
   const [region, setRegion] = useState('')
@@ -118,7 +123,7 @@ export default function FoodDatabase() {
       </div>
 
       <Card className="overflow-x-auto p-0">
-        <table className="w-full min-w-[640px] text-sm">
+        <table className="w-full min-w-160 text-sm">
           <thead className="sticky top-0 border-b border-line bg-white text-left">
             <tr>
               {columns.map((col) => (

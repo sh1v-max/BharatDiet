@@ -4,6 +4,7 @@ import Badge from '../components/common/Badge.jsx'
 import Button from '../components/common/Button.jsx'
 import StatTile from '../components/calculator/StatTile.jsx'
 import MacroDonut from '../components/calculator/MacroDonut.jsx'
+import usePageMeta from '../hooks/usePageMeta.js'
 import { getFoodById, budgetTier, filterFoods, sortFoods } from '../services/foodService.js'
 
 const regionLabels = {
@@ -17,6 +18,13 @@ const regionLabels = {
 export default function FoodDetail() {
   const { slug } = useParams()
   const food = getFoodById(slug)
+
+  usePageMeta(
+    food ? `${food.name} — Calories & Protein` : 'Food not found',
+    food
+      ? `${food.name} (${food.serving}): ${food.cal} calories, ${food.protein}g protein, ${food.carbs}g carbs, ${food.fat}g fat. Costs about ₹${food.cost} per serving.`
+      : undefined,
+  )
 
   if (!food) {
     return (

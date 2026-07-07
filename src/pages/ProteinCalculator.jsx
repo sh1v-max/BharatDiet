@@ -6,6 +6,7 @@ import CalculatorForm from '../components/calculator/CalculatorForm.jsx'
 import StatTile from '../components/calculator/StatTile.jsx'
 import { useUserProfile } from '../context/UserProfileContext.jsx'
 import useNutritionEngine from '../hooks/useNutritionEngine.js'
+import usePageMeta from '../hooks/usePageMeta.js'
 import { PROTEIN_PER_KG } from '../utils/nutritionMath.js'
 
 /* Everyday visual anchors so grams mean something to a first-time user. */
@@ -19,6 +20,10 @@ function proteinAnchors(proteinG) {
 }
 
 export default function ProteinCalculator() {
+  usePageMeta(
+    'Protein Calculator (India)',
+    'How much protein do you need per day? Free calculator with goal-based targets and what the number looks like in dal, eggs, paneer, and milk.',
+  )
   const { profile } = useUserProfile()
   const result = useNutritionEngine(profile)
 

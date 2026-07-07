@@ -8,8 +8,13 @@ import TypicalDayPicker from '../components/proteinGap/TypicalDayPicker.jsx'
 import GapComparisonBar from '../components/proteinGap/GapComparisonBar.jsx'
 import { useUserProfile } from '../context/UserProfileContext.jsx'
 import useProteinGap from '../hooks/useProteinGap.js'
+import usePageMeta from '../hooks/usePageMeta.js'
 
 export default function ProteinGap() {
+  usePageMeta(
+    'Protein Gap Analysis',
+    'Tap what you eat on a normal day and see your protein gap — plus the cheapest Indian foods that close it, ranked by protein per rupee.',
+  )
   const { profile } = useUserProfile()
   const [selected, setSelected] = useState([])
 

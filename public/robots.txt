@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bharatdiet.in/sitemap.xml

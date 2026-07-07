@@ -7,8 +7,13 @@ import MacroDonut from '../components/calculator/MacroDonut.jsx'
 import StatTile from '../components/calculator/StatTile.jsx'
 import { useUserProfile } from '../context/UserProfileContext.jsx'
 import useNutritionEngine from '../hooks/useNutritionEngine.js'
+import usePageMeta from '../hooks/usePageMeta.js'
 
 export default function CalorieCalculator() {
+  usePageMeta(
+    'Calorie Calculator (India)',
+    'Free calorie calculator for Indians — BMI, BMR, TDEE, and daily calorie target with a macro split, using the Mifflin-St Jeor equation.',
+  )
   const { profile } = useUserProfile()
   const result = useNutritionEngine(profile)
 
