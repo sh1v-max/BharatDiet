@@ -6,6 +6,7 @@ const navItems = [
   { to: '/meal-planner', label: 'Meal Planner' },
   { to: '/calculators/calories', label: 'Calorie Calculator' },
   { to: '/calculators/protein', label: 'Protein Calculator' },
+  { to: '/protein-gap', label: 'Protein Gap' },
   { to: '/foods', label: 'Food Database' },
   { to: '/pricing', label: 'Pricing' },
 ]
