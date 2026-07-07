@@ -48,7 +48,7 @@ export default function MealPlanner() {
             <div className="flex flex-col gap-4">
               <Card className="p-5">
                 <div className="flex flex-wrap items-center justify-between gap-4">
-                  <div className="grid flex-1 grid-cols-3 gap-3">
+                  <div className="grid min-w-0 flex-1 grid-cols-1 gap-3 min-[420px]:grid-cols-3">
                     <StatTile
                       label="Calories"
                       value={Math.round(plan.totals.cal)}
@@ -66,7 +66,11 @@ export default function MealPlanner() {
                       hint="per day"
                     />
                   </div>
-                  <Button variant="secondary" onClick={regenerate}>
+                  <Button
+                    variant="secondary"
+                    onClick={regenerate}
+                    className="w-full min-[420px]:w-auto"
+                  >
                     ↻ Regenerate
                   </Button>
                 </div>

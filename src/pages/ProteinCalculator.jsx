@@ -64,7 +64,7 @@ export default function ProteinCalculator() {
                 <h3 className="mb-2 text-sm font-semibold text-ink-soft">
                   What {result.proteinG}g looks like in real food
                 </h3>
-                <ul className="grid grid-cols-2 gap-2">
+                <ul className="grid grid-cols-1 gap-2 min-[420px]:grid-cols-2">
                   {proteinAnchors(result.proteinG).map((a) => (
                     <li
                       key={a.food}

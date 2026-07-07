@@ -22,12 +22,14 @@ function Hero() {
         Stop counting avocados. Get a diet plan built around roti, dal, and
         rice — for your body, your region, and your budget.
       </p>
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <Link to="/meal-planner">
-          <Button size="lg">Calculate My Free Diet Plan →</Button>
+      <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+        <Link to="/meal-planner" className="w-full sm:w-auto">
+          <Button size="lg" className="w-full sm:w-auto">
+            Calculate My Free Diet Plan →
+          </Button>
         </Link>
-        <Link to="/protein-gap">
-          <Button size="lg" variant="secondary">
+        <Link to="/protein-gap" className="w-full sm:w-auto">
+          <Button size="lg" variant="secondary" className="w-full sm:w-auto">
             Check My Protein Gap
           </Button>
         </Link>

@@ -16,7 +16,7 @@ function portionLabel(portions) {
 export default function MealSlotCard({ slot }) {
   return (
     <Card className="p-5">
-      <div className="mb-3 flex items-center justify-between">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
         <h3 className="flex items-center gap-2 font-semibold">
           <span>{slotEmoji[slot.key]}</span> {slot.label}
         </h3>
