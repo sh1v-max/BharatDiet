@@ -507,9 +507,9 @@ At launch, the food database can ship as a static JSON bundle (fast, no backend 
 
 ---
 
-## PHASE 11 — Development Roadmap (6 Weeks)
+## PHASE 11 — Development Roadmap (6 Steps)
 
-### Week 1 — Foundation
+### Step 1 — Foundation
 - **Goals:** Project setup, design system, core architecture.
 - **Deliverables:** Vite+React+Tailwind scaffold, folder structure, color/type tokens, routing skeleton.
 - **Features:** None user-facing yet.
@@ -517,7 +517,7 @@ At launch, the food database can ship as a static JSON bundle (fast, no backend 
 - **Technical Tasks:** Set up Context API skeleton, ESLint/Prettier, basic CI.
 - **Testing Tasks:** Component smoke tests for common components.
 
-### Week 2 — Nutrition Calculation Engine
+### Step 2 — Nutrition Calculation Engine
 - **Goals:** Ship working calorie/protein calculators.
 - **Deliverables:** `/calculators/calories`, `/calculators/protein` pages live.
 - **Features:** BMI/BMR/TDEE/macro calculation (Phase 3 logic) as pure utility functions + `useNutritionEngine`.
@@ -525,7 +525,7 @@ At launch, the food database can ship as a static JSON bundle (fast, no backend 
 - **Technical Tasks:** Implement `nutritionMath.js`, unit tests for formulas against known reference values.
 - **Testing Tasks:** Validate BMR/TDEE outputs against manual calculations for edge-case ages/weights.
 
-### Week 3 — Food Database
+### Step 3 — Food Database
 - **Goals:** Ship browsable, searchable food database.
 - **Deliverables:** `/foods` and `/foods/:slug` pages; initial 200+ item JSON dataset.
 - **Features:** Search, filter by category/region/diet, sortable table.
@@ -533,7 +533,7 @@ At launch, the food database can ship as a static JSON bundle (fast, no backend 
 - **Technical Tasks:** Finalize food data schema, import curated spreadsheet data into JSON.
 - **Testing Tasks:** Data validation script (no missing macro fields, cost sanity checks).
 
-### Week 4 — Meal Plan Generator
+### Step 4 — Meal Plan Generator
 - **Goals:** Ship the core differentiator feature.
 - **Deliverables:** `/meal-planner` fully functional end-to-end.
 - **Features:** Region/diet/budget/goal onboarding form → generated daily meal plan with cost + macros.
@@ -541,7 +541,7 @@ At launch, the food database can ship as a static JSON bundle (fast, no backend 
 - **Technical Tasks:** Implement `mealAllocator.js` (Phase 5 greedy allocation logic), `useMealPlanGenerator` hook.
 - **Testing Tasks:** Test all region×diet×budget combinations produce valid, non-empty plans within macro tolerance.
 
-### Week 5 — Protein Gap + Landing Page
+### Step 5 — Protein Gap + Landing Page
 - **Goals:** Ship the emotional hook feature and the marketing homepage.
 - **Deliverables:** Protein Gap Analysis feature; polished, animated homepage (Phase 8 spec).
 - **Features:** Typical-day picker, gap comparison visualization, food suggestions to close gap.
@@ -549,7 +549,7 @@ At launch, the food database can ship as a static JSON bundle (fast, no backend 
 - **Technical Tasks:** `useProteinGap` hook, homepage interactive calculator preview wiring.
 - **Testing Tasks:** Cross-device responsive QA on homepage; gap-calculation edge cases (zero intake, already-sufficient intake).
 
-### Week 6 — Polish, SEO, Launch Prep
+### Step 6 — Polish, SEO, Launch Prep
 - **Goals:** Production-ready polish and discoverability.
 - **Deliverables:** Blog scaffold with 3–5 seed articles, FAQ/About/Contact pages, SEO meta tags, accessibility pass.
 - **Features:** Pricing page (Free/Pro static — no payment integration required at MVP), FAQ.
@@ -639,8 +639,8 @@ It's a *localized, non-generic* product idea — not another to-do app or clone.
 ### Scalability Concepts Demonstrated
 - Clean separation between pure business logic (`utils/nutritionMath.js`, `mealAllocator.js`) and UI — portable to a backend without rewrite.
 - A defined migration path from static JSON to a real backend, showing awareness of MVP-vs-scale tradeoffs rather than over-engineering day one.
-- A phased roadmap (6-week MVP → AI features later) showing realistic scoping discipline, a skill many junior portfolios visibly lack.
+- A phased roadmap (6-step MVP → AI features later) showing realistic scoping discipline, a skill many junior portfolios visibly lack.
 
 ---
 
-*End of blueprint. This document is complete enough that development can begin directly from Phase 11's Week 1 tasks.*
+*End of blueprint. This document is complete enough that development can begin directly from Phase 11's Step 1 tasks.*

@@ -22,8 +22,8 @@ const TIERS = [
   },
   {
     name: 'Pro',
-    price: '₹149',
-    period: 'per month · ₹999/yr',
+    price: 'Coming soon',
+    period: 'not built yet',
     tagline: 'For people ready to make the plan a habit.',
     highlight: true,
     features: [
@@ -37,8 +37,8 @@ const TIERS = [
   },
   {
     name: 'Premium',
-    price: '₹399',
-    period: 'per month · ₹2999/yr',
+    price: 'Coming soon',
+    period: 'not built yet',
     tagline: 'Your personal nutrition co-pilot.',
     features: [
       'Everything in Pro',
@@ -53,7 +53,7 @@ const TIERS = [
 export default function Pricing() {
   usePageMeta(
     'Pricing',
-    'BharatDiet pricing — free calculators and meal plans forever; Pro and Premium plans for saving, swapping, and AI coaching.',
+    'BharatDiet pricing: free calculators and meal plans forever. Pro and Premium tiers for saving, swapping, and AI coaching are coming soon.',
   )
 
   return (
@@ -109,8 +109,8 @@ export default function Pricing() {
       </div>
 
       <p className="mt-8 text-center text-sm text-ink-faint">
-        Paid tiers are on the roadmap — pricing shown is indicative and may
-        change at launch.
+        Pro and Premium are on the roadmap and not built yet. Nothing is
+        charged today, and pricing will be decided at launch.
       </p>
     </section>
   )

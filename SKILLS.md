@@ -1,10 +1,10 @@
 # BharatDiet — Skills Overview
 
-A map of every skill needed to actually build this, organized by category and tied back to the blueprint phases. Use this as a checklist — tick off what you already have, treat the rest as your learning backlog for the 6-week build.
+A map of every skill needed to actually build this, organized by category and tied back to the blueprint phases. Use this as a checklist — tick off what you already have, treat the rest as your learning backlog for the phased build.
 
 ---
 
-## 1. Frontend Engineering (core, used every week)
+## 1. Frontend Engineering (core, used in every step)
 
 | Skill | Where it's used | Depth needed |
 |---|---|---|
@@ -19,7 +19,7 @@ A map of every skill needed to actually build this, organized by category and ti
 | Charting (donut/bar charts) | Macro breakdown, protein gap bar (Phase 6, 9) | Basic-moderate — a lightweight charting lib (Recharts or similar) or hand-rolled SVG |
 | Forms & multi-step UX | Onboarding flow (Phase 7) | Moderate — controlled inputs, step-based state, validation |
 | Responsive/mobile-first CSS | Phase 9 mobile rules | Moderate — this persona set is mobile-heavy, so this isn't optional polish |
-| Performance basics | Phase 10 scalability, Phase 11 Week 6 | Basic — code-splitting (`React.lazy`), avoiding layout shift, Lighthouse literacy |
+| Performance basics | Phase 10 scalability, Phase 11 Step 6 | Basic — code-splitting (`React.lazy`), avoiding layout shift, Lighthouse literacy |
 
 **Optional/later:** Redux Toolkit (only if Context strains once AI/tracking features land in Phase 12).
 
@@ -82,7 +82,7 @@ These aren't "coding skills" but they're what makes the roadmap decisions defens
 
 | Skill | Where it's used |
 |---|---|
-| SEO fundamentals (meta tags, sitemap.xml, semantic HTML) | Phase 14, Phase 11 Week 6 |
+| SEO fundamentals (meta tags, sitemap.xml, semantic HTML) | Phase 14, Phase 11 Step 6 |
 | Keyword-aware content writing | Blog articles, per-food pages (Phase 14) |
 | Programmatic content generation (templating, not per-page hand-writing) | Auto-generated `/foods/:slug` and `/plans/:region-:goal` pages — this is a templating skill (build one component, feed it many data rows), not 200 individual writing tasks |
 
@@ -94,27 +94,27 @@ These aren't "coding skills" but they're what makes the roadmap decisions defens
 |---|---|
 | Git/GitHub (branching, commits) | Entire build — you're already doing this |
 | npm/Vite build tooling | Project setup |
-| ESLint/Prettier config | Code quality, Week 1 |
-| Basic testing (unit tests for pure functions) | `nutritionMath.js`, `mealAllocator.js` validation (Phase 11 Week 2, 4) — this is the highest-value testing in the whole project since a wrong formula undermines the entire product's trust |
-| Browser DevTools (responsive/accessibility audits, Lighthouse) | Phase 11 Week 6 polish |
-| Basic analytics setup (e.g., Plausible/GA) | Week 6, informs future SEO/conversion decisions |
+| ESLint/Prettier config | Code quality, Step 1 |
+| Basic testing (unit tests for pure functions) | `nutritionMath.js`, `mealAllocator.js` validation (Phase 11 Step 2, 4) — this is the highest-value testing in the whole project since a wrong formula undermines the entire product's trust |
+| Browser DevTools (responsive/accessibility audits, Lighthouse) | Phase 11 Step 6 polish |
+| Basic analytics setup (e.g., Plausible/GA) | Step 6, informs future SEO/conversion decisions |
 
 ---
 
 ## 8. Deferred / Not Needed for MVP (Phase 12+ only)
 
-Don't invest time here until the 6-week MVP ships — these are explicitly future-phase:
+Don't invest time here until the MVP ships — these are explicitly future-phase:
 
 - Backend framework (Node/Express) + database (Postgres) — only once admin-editable food DB or user accounts are needed
 - AI/LLM integration (RAG-style assistant) — Phase 12 AI Diet Coach
-- Payment gateway integration (Razorpay/Stripe) — only needed once Phase 13 pricing goes live for real, not for the static pricing page in Week 6
+- Payment gateway integration (Razorpay/Stripe) — only needed once Phase 13 pricing goes live for real, not for the static pricing page in Step 6
 - ML ranking models — Phase 12 AI Meal Suggestions personalization
 
 ---
 
-## Skill-to-Week Mapping (quick reference)
+## Skill-to-Step Mapping (quick reference)
 
-| Week | Primary skills exercised |
+| Step | Primary skills exercised |
 |---|---|
 | 1 | React/Vite/Tailwind setup, design system, Git workflow |
 | 2 | JS math/formulas, unit testing, calculator UI, charting |
@@ -127,9 +127,9 @@ Don't invest time here until the 6-week MVP ships — these are explicitly futur
 
 ## Honest Gap Check
 
-If you're coming from a frontend/DSA background (which fits your recent work), the areas most worth deliberately practicing *before* Week 1 rather than learning mid-build are:
+If you're coming from a frontend/DSA background (which fits your recent work), the areas most worth deliberately practicing *before* Step 1 rather than learning mid-build are:
 1. **UX writing / microcopy** — easy to underrate, but Phase 6 and 8 depend on tone as much as layout.
-2. **Data modeling discipline** — the food database schema (Phase 4) is the foundation everything else reads from; get it right before Week 3, not during it.
+2. **Data modeling discipline** — the food database schema (Phase 4) is the foundation everything else reads from; get it right before Step 3, not during it.
 3. **Testing pure functions** — since `nutritionMath.js` and `mealAllocator.js` are the credibility core of the whole product, treat their tests as non-negotiable, not a nice-to-have.
 
-Everything else in this list you'll pick up naturally by building week-to-week off the Phase 11 roadmap.
+Everything else in this list you'll pick up naturally by building step by step off the Phase 11 roadmap.

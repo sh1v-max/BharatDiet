@@ -87,4 +87,4 @@ npm run build    # production build (generates sitemap.xml first)
 
 ---
 
-Built as a real product exercise: blueprint first, then a 6-week milestone build — nutrition engine, food database, meal generator, protein gap analysis, landing page, and SEO, in that order.
+Built as a real product exercise: blueprint first, then a phase-by-phase build following its roadmap. Nutrition engine, food database, meal generator, protein gap analysis, landing page, and SEO, in that order.
